@@ -37,10 +37,7 @@ public class ItemHBoxController {
     }
 
     public void onEditClick(ActionEvent actionEvent) throws IOException {
-        //TODO: Open the edit inventory window with the item data
-
         EditInventory editInventory = new EditInventory(item);
-
     }
 
 

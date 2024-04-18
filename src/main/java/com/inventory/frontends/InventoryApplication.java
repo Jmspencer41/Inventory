@@ -44,6 +44,7 @@ public class InventoryApplication extends Application {
             inventory.showInventory(inventoryScrollPane);
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Could not get inventory scroll pane. " + e.getMessage());
             e.printStackTrace();
         }
 

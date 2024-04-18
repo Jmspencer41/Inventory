@@ -28,7 +28,7 @@ public class InventoryMainController {
         String searchItem = searchText.getText();
 
         try {
-            inventory.findItem(searchItem);
+            Item item = inventory.findItem(searchItem);
 
 
         } catch (IOException e) {
