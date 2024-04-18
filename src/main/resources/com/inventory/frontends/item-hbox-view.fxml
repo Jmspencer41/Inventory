@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<HBox fx:id="itemHBox" alignment="TOP_CENTER" prefHeight="32.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.controllers.ItemHBoxController">
+    <children>
+        <Label fx:id="nameLabel" alignment="CENTER" minWidth="-Infinity" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Name">
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
+        <StackPane prefHeight="40.0" style="-fx-border-color: black; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="descriptionLabel" prefHeight="40.0" style="-fx-font-weight: bold;" text="Description" StackPane.alignment="CENTER_LEFT">
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+            </children>
+        </StackPane>
+        <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Price">
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
+        <Label fx:id="quantityLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Quantity">
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
+        <Label fx:id="totalPriceLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Total Cost">
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
+        <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onEditClick" prefHeight="40.0" prefWidth="50.0" text="Edit">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin></Button>
+    </children>
+</HBox>

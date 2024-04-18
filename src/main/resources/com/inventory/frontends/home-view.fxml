@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4ba9e3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.controllers.InventoryMainController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox spacing="10.0">
+               <children>
+                  <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onAddInventoryClick" prefHeight="25.0" text="Add Inventory" />
+                  <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSettingsClick" prefHeight="25.0" text="Settings" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField promptText="Item" />
+                  <Button mnemonicParsing="false" onAction="#onSearchClick" text="Search" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="32.0" prefWidth="552.0" style="-fx-background-color: #2293D9;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Name">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <StackPane prefHeight="40.0" style="-fx-border-color: black; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="273.0" style="-fx-font-weight: bold;" text="Description" StackPane.alignment="CENTER">
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Price">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Quantity">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="100.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Total Cost">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="61.0" style="-fx-border-color: black; -fx-label-padding: 10px; -fx-font-weight: bold;" text="Edit">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="inventoryScrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #4B5DE3;" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="328.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
