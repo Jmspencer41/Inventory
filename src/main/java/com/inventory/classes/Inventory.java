@@ -3,6 +3,7 @@ package com.inventory.classes;
 import com.inventory.controllers.ItemHBoxController;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -10,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -59,6 +62,23 @@ public class Inventory {
         inventoryScrollPane.setContent(vBox);
     }
 
+    public void saveInventory() {
+        try {
+
+            BufferedWriter out = new BufferedWriter(new FileWriter(InventoryApplication.inventoryFilePath, false));
+
+            for (Item item : inventory) {
+                out.write(item.getName() + "," + item.getDescription() + "," + item.getPrice() + "," + item.getQuantity() + "\n");
+            }
+            out.close();
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle("Save");
+            success.setHeaderText("Save Successful");
+            success.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 //    public HBox createItemHBox(Item item) {
 //        HBox itemHBox = new HBox();
 //        itemHBox.getChildren().add(new Label(item.getName()));

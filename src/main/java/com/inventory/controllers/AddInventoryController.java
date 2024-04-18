@@ -55,15 +55,6 @@ public class AddInventoryController {
             e.printStackTrace();
         }
 
-        // Write the new item to the inventory file
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter(InventoryApplication.inventoryFilePath, true));
-            out.write(newItem.getName() + "," + newItem.getDescription() + "," + newItem.getPrice() + "," + newItem.getQuantity() + "\n");
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         AddInventory.close(); // Close the Add Inventory window
 
     }

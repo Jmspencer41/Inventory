@@ -43,6 +43,7 @@
                <children>
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onAddInventoryClick" prefHeight="25.0" text="Add Inventory" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSettingsClick" prefHeight="25.0" text="Settings" />
+                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="25.0" text="Save" />
                   <Region HBox.hgrow="ALWAYS" />
                   <TextField promptText="Item" />
                   <Button mnemonicParsing="false" onAction="#onSearchClick" text="Search" />
