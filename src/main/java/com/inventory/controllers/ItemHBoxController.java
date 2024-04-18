@@ -40,6 +40,7 @@ public class ItemHBoxController {
         //TODO: Open the edit inventory window with the item data
 
         EditInventory editInventory = new EditInventory(item);
+
     }
 
 

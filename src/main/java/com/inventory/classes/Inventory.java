@@ -2,22 +2,17 @@ package com.inventory.classes;
 
 import com.inventory.controllers.ItemHBoxController;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import com.inventory.frontends.InventoryApplication;
-import com.inventory.controllers.EditInventoryController;
 
 public class Inventory {
     public static ArrayList<Item> inventory;
@@ -46,6 +41,10 @@ public class Inventory {
 
     public void removeItem(int index, ScrollPane scrollPane) throws IOException {
         inventory.remove(index);
+        showInventory(scrollPane);
+    }
+
+    public void updateInventoryTable(ScrollPane scrollPane) throws IOException {
         showInventory(scrollPane);
     }
 

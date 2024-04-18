@@ -18,16 +18,19 @@ import static com.inventory.frontends.InventoryApplication.inventoryScrollPane;
 public class EditInventoryController {
 
     @FXML
-    private static TextField nameField = new TextField();
+    private TextField nameField;
     @FXML
-    private static TextField descriptionField = new TextField();
+    private TextField descriptionField;
     @FXML
-    private static TextField priceField = new TextField();
+    private TextField priceField;
     @FXML
-    private static TextField quantityField = new TextField();
+    private TextField quantityField;
+
+    private Item item;
 
     @FXML
-    public static void setFields(Item item) {
+    public void setFields(Item item) {
+        this.item = item;
         nameField.setText(item.getName());
         descriptionField.setText(item.getDescription());
         priceField.setText(String.valueOf(item.getPrice()));
@@ -35,7 +38,31 @@ public class EditInventoryController {
     }
 
     @FXML
-    public void saveButton(ActionEvent actionEvent) {
+    public void saveButton(ActionEvent actionEvent) throws IOException {
+        String name = nameField.getText();
+        String description = descriptionField.getText();
+        double itemPrice;
+        int quantity;
+
+        if (name.isEmpty() || description.isEmpty()) {
+            throw new IOException("Price and Quantity fields cannot be empty");
+        } else {
+            try {
+                itemPrice = Double.parseDouble(priceField.getText());
+                quantity = Integer.parseInt(quantityField.getText());
+            }
+            catch (NumberFormatException e) {
+                throw new IOException("Price and Quantity must be numbers");
+            }
+        }
+
+        item.setName(name);
+        item.setDescription(description);
+        item.setPrice(itemPrice);
+        item.setQuantity(quantity);
+        item.setTotalPrice(itemPrice * quantity);
+        InventoryApplication.inventory.updateInventoryTable(inventoryScrollPane);
+
         EditInventory.EditStage.close();
     }
 

@@ -33,7 +33,7 @@ public class AddInventoryController {
         int itemQuantity;
 
         // Check if the price and quantity fields are empty
-        if (priceTextField.getText().isEmpty() || quantityTextField.getText().isEmpty()) {
+        if (itemName.isEmpty() || itemDescription.isEmpty()) {
             throw new IOException("Price and Quantity fields cannot be empty");
         } else {
             try {
