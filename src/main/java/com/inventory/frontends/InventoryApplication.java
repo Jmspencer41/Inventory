@@ -17,7 +17,6 @@ public class InventoryApplication extends Application {
     public static Inventory inventory;
     public static ScrollPane inventoryScrollPane;
     public static BufferedReader in;
-
     public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
 
     @Override

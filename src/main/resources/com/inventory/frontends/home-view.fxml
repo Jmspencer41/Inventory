@@ -45,7 +45,7 @@
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSettingsClick" prefHeight="25.0" text="Settings" />
                    <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="25.0" text="Save" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField promptText="Item" />
+                  <TextField fx:id="searchText" promptText="Item" />
                   <Button mnemonicParsing="false" onAction="#onSearchClick" text="Search" />
                </children>
                <opaqueInsets>

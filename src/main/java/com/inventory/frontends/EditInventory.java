@@ -20,10 +20,9 @@ public class EditInventory {
         Scene scene = new Scene(fxmlLoader.load(), 720, 720);
 
         EditInventoryController editController = fxmlLoader.getController();
-        index = item.getIndex();
 
         editController.setFields(item);
-
+        index = item.getIndex();
         EditStage = new Stage();
         EditStage.setTitle("Edit Inventory");
         EditStage.setScene(scene);

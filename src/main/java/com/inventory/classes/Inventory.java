@@ -6,7 +6,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,12 +15,14 @@ import com.inventory.frontends.InventoryApplication;
 
 public class Inventory {
     public static ArrayList<Item> inventory;
-    public static int inventoryItemCount; //Might not need this
+    //Don't think I need this counter?
+    public static int inventoryItemCount;
 
     public Inventory() throws IOException {
         inventory = new ArrayList<>();
         String line = "";
         inventoryItemCount = 0;
+
         // Read the inventory file and add items to the inventory
         while (line != null) {
             line = InventoryApplication.in.readLine();
@@ -32,6 +33,10 @@ public class Inventory {
                 inventoryItemCount++;
             }
         }
+    }
+
+    public int size() {
+        return inventory.size();
     }
 
     public void addItem(Item item, ScrollPane scrollPane) throws IOException {
@@ -78,19 +83,13 @@ public class Inventory {
             e.printStackTrace();
         }
     }
-//    public HBox createItemHBox(Item item) {
-//        HBox itemHBox = new HBox();
-//        itemHBox.getChildren().add(new Label(item.getName()));
-//        itemHBox.getChildren().add(new Label(item.getDescription()));
-//        itemHBox.getChildren().add(new Label("$" + item.getPrice()));
-//        itemHBox.getChildren().add(new Label("" + item.getQuantity()));
-//        itemHBox.getChildren().add(new Label("$" + item.getTotalPrice()));
-//        itemHBox.getChildren().add(new Button("Edit"));
-//        itemHBox.setSpacing(10);
-//        itemHBox.setAlignment(Pos.CENTER);
-//        itemHBox.setMaxWidth(3000);
-//        HBox.setHgrow(itemHBox, Priority.ALWAYS);
-//
-//        return itemHBox;
-//    }
+
+    public Item findItem(String searchedItem) throws IOException {
+        for (Item item : inventory) {
+            if (item.getName().equals(searchedItem)) {
+               return item;
+            }
+        }
+        throw new IOException("Item not found.");
+    }
 }
