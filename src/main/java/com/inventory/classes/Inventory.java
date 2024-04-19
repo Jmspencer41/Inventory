@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -17,6 +18,7 @@ import com.inventory.frontends.InventoryApplication;
 
 public class Inventory {
     public static ArrayList<Item> inventory;
+    public ArrayList<Item> searchResults;
     //Don't think I need this counter?
     public static int inventoryItemCount;
 
@@ -35,6 +37,42 @@ public class Inventory {
                 inventoryItemCount++;
             }
         }
+    }
+
+
+    /**
+     * Constructor for searching for an item in the inventory
+     * @param searchedItem The item to search for
+     * @throws IOException If the item is not found
+     */
+    public Inventory(String searchedItem) throws IOException {
+        searchResults = new ArrayList<>();
+        FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 1200, 800);
+        ScrollPane searchScrollPane = (ScrollPane) scene.lookup("#inventoryScrollPane");
+
+        for (Item item : inventory) {
+            if (item.getName().equals(searchedItem)) {
+                searchResults.add(item);
+            }
+        }
+
+        if (searchResults.isEmpty()) {
+            throw new IOException("Item not found.");
+        } else {
+            try {
+                showSearched(searchScrollPane, searchResults);
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Could not get inventory scroll pane. " + e.getMessage());
+                alert.show();
+                e.printStackTrace();
+            }
+
+            InventoryApplication.primaryStage.setScene(scene);
+        }
+
     }
 
     public int size() {
@@ -68,6 +106,19 @@ public class Inventory {
         inventoryScrollPane.setContent(vBox);
     }
 
+    public void showSearched(ScrollPane inventoryScrollPane, ArrayList<Item> searched) throws IOException {
+        VBox vBox = new VBox();
+        for (Item item : searched) {
+            URL url = InventoryApplication.class.getResource("item-hbox-view.fxml");
+            FXMLLoader loader = new FXMLLoader(url);
+            HBox itemHBox = loader.load();
+            ItemHBoxController itemHBoxController = loader.getController();
+            itemHBoxController.setItemData(item);
+            vBox.getChildren().add(itemHBox);
+        }
+        inventoryScrollPane.setContent(vBox);
+    }
+
     public void saveInventory() {
         try {
 
@@ -83,25 +134,6 @@ public class Inventory {
             success.show();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void findItem(String searchedItem) throws IOException {
-        ArrayList<Item> searchResults = new ArrayList<>();
-        for (Item item : inventory) {
-            if (item.getName().equals(searchedItem)) {
-                searchResults.add(item);
-            }
-        }
-        if (searchResults.isEmpty()) {
-            throw new IOException("Item not found.");
-        } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root, 1200, 800);
-            ScrollPane inventoryScrollPane = (ScrollPane) scene.lookup("#inventoryScrollPane");
-            InventoryApplication.primaryStage.setScene(scene);
-
         }
     }
 }

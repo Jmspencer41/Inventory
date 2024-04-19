@@ -41,6 +41,7 @@
             </MenuBar>
             <HBox spacing="10.0">
                <children>
+                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="25.0" text="Home" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onAddInventoryClick" prefHeight="25.0" text="Add Inventory" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSettingsClick" prefHeight="25.0" text="Settings" />
                    <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="25.0" text="Save" />

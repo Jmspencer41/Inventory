@@ -19,15 +19,16 @@ public class InventoryApplication extends Application {
     public static BufferedReader in;
     public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
     public static Stage primaryStage;
+    private static Scene mainScene;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        this.primaryStage = primaryStage;
+        InventoryApplication.primaryStage = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 1200, 800);
+        mainScene = new Scene(root, 1200, 800);
 
-        inventoryScrollPane = (ScrollPane) scene.lookup("#inventoryScrollPane");
+        inventoryScrollPane = (ScrollPane) mainScene.lookup("#inventoryScrollPane");
 
         try {
             in = new BufferedReader(new FileReader(inventoryFilePath));
@@ -47,21 +48,21 @@ public class InventoryApplication extends Application {
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Could not get inventory scroll pane. " + e.getMessage());
+            alert.show();
             e.printStackTrace();
         }
 
-        this.primaryStage.setTitle("My Inventory");
+        InventoryApplication.primaryStage.setTitle("My Inventory");
 //        setScene(this.primaryStage, scene);
         primaryStage.setTitle("My Inventory");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(mainScene);
         primaryStage.show();
     }
 
-//    public void setScene(Stage stage, Scene scene) {
-//        primaryStage = stage;
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-//    }
+    public static void setMainScene() {
+        primaryStage.setScene(mainScene);
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
         launch();

@@ -1,7 +1,9 @@
 package com.inventory.controllers;
 
+import com.inventory.classes.Inventory;
 import com.inventory.classes.Item;
 import com.inventory.frontends.AddInventory;
+import com.inventory.frontends.InventoryApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -30,20 +32,21 @@ public class InventoryMainController {
         String searchItem = searchText.getText();
 
         try {
-           inventory.findItem(searchItem);
-
-
+            Inventory searchInventory = new Inventory(searchItem);
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(e.getMessage());
             alert.show();
         }
-
     }
-
     @FXML
     public void onSaveClick(ActionEvent actionEvent) {
         inventory.saveInventory();
+    }
+
+    @FXML
+    public void onHomeButtonClick(ActionEvent actionEvent) {
+        InventoryApplication.setMainScene();
     }
 }

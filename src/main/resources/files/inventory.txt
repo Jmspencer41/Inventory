@@ -1,7 +1,6 @@
-Edited item,This item has now been edited,18.54,69
 Josh,Human,420.69,54
 Computer,Personal programming and gaming machine,5000.0,3
-Hello,Just some words to go in this place for no reason,457.54,42
+Hello World,Just some words to go in this place for no reason,457.54,42
 Something new,A description of something,48.54,12
 Whatever,Whaterver i want to it & more!!!!,42.69,12
 Eye Patch,Shelf flash light green,368.22,1
