@@ -2,6 +2,8 @@ package com.inventory.classes;
 
 import com.inventory.controllers.ItemHBoxController;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
@@ -84,12 +86,22 @@ public class Inventory {
         }
     }
 
-    public Item findItem(String searchedItem) throws IOException {
+    public void findItem(String searchedItem) throws IOException {
+        ArrayList<Item> searchResults = new ArrayList<>();
         for (Item item : inventory) {
             if (item.getName().equals(searchedItem)) {
-               return item;
+                searchResults.add(item);
             }
         }
-        throw new IOException("Item not found.");
+        if (searchResults.isEmpty()) {
+            throw new IOException("Item not found.");
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene scene = new Scene(root, 1200, 800);
+            ScrollPane inventoryScrollPane = (ScrollPane) scene.lookup("#inventoryScrollPane");
+            InventoryApplication.primaryStage.setScene(scene);
+
+        }
     }
 }

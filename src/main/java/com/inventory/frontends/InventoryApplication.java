@@ -18,9 +18,11 @@ public class InventoryApplication extends Application {
     public static ScrollPane inventoryScrollPane;
     public static BufferedReader in;
     public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
+    public static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 1200, 800);
@@ -48,11 +50,18 @@ public class InventoryApplication extends Application {
             e.printStackTrace();
         }
 
+        this.primaryStage.setTitle("My Inventory");
+//        setScene(this.primaryStage, scene);
         primaryStage.setTitle("My Inventory");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
+//    public void setScene(Stage stage, Scene scene) {
+//        primaryStage = stage;
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+//    }
 
     public static void main(String[] args) {
         launch();

@@ -5,6 +5,7 @@ import com.inventory.frontends.AddInventory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import org.controlsfx.control.action.Action;
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class InventoryMainController {
 
     @FXML
     public TextField searchText;
+    public ScrollPane inventoryScrollPane;
 
     @FXML
     protected void onAddInventoryClick() throws IOException {
@@ -28,7 +30,8 @@ public class InventoryMainController {
         String searchItem = searchText.getText();
 
         try {
-            Item item = inventory.findItem(searchItem);
+           inventory.findItem(searchItem);
+
 
 
         } catch (IOException e) {
