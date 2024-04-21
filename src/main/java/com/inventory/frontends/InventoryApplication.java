@@ -12,12 +12,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 public class InventoryApplication extends Application {
     public static Inventory inventory;
     public static ScrollPane inventoryScrollPane;
     public static BufferedReader in;
-    public static String inventoryFilePath = "target/classes/files/inventory.txt";
+    public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
     public static Stage primaryStage;
     private static Scene mainScene;
 
@@ -72,6 +73,17 @@ public class InventoryApplication extends Application {
         primaryStage.show();
     }
 
+    public static void setSettingsScene() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("settings-view.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 1000, 600);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void setDarkMode() { //TODO: Implement dark mode
+        mainScene.getStylesheets().add(Objects.requireNonNull(InventoryApplication.class.getResource("dark-mode.css")).toExternalForm());
+    }
     public static void main(String[] args) {
         launch();
     }

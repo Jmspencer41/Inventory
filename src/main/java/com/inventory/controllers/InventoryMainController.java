@@ -23,7 +23,7 @@ public class InventoryMainController {
     }
     @FXML
     protected void onSettingsClick() throws IOException {
-
+        InventoryApplication.setSettingsScene();
     }
     @FXML
     public void onSearchClick(ActionEvent actionEvent) {
@@ -45,5 +45,10 @@ public class InventoryMainController {
     @FXML
     public void onHomeButtonClick(ActionEvent actionEvent) {
         InventoryApplication.setMainScene();
+    }
+
+    @FXML
+    public void darkMode(ActionEvent actionEvent) {
+        InventoryApplication.setDarkMode();
     }
 }
