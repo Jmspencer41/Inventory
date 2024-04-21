@@ -1,13 +1,9 @@
 package com.inventory.controllers;
 
-import com.inventory.classes.Inventory;
-import com.inventory.frontends.AddInventory;
 import com.inventory.frontends.EditInventory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import com.inventory.classes.Item;
 
 import java.io.IOException;

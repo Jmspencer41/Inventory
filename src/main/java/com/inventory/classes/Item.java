@@ -19,34 +19,29 @@ public class Item {
     }
 
     /**
-        Getters for the item object
+     * Getters for the item object
     */
     public String getName() {
         return name;
     }
-
     public String getDescription() {
         return description;
     }
-
     public double getPrice() {
         return price;
     }
-
     public int getQuantity() {
         return quantity;
     }
-
     public double getTotalPrice() {
         return totalPrice;
     }
-
     public int getIndex() {
        return inventory.indexOf(this);
     }
 
     /**
-        Setters for the item object
+     * Setters for the item object
      */
     public void setName(String name) {
         this.name = name;
@@ -60,7 +55,6 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }

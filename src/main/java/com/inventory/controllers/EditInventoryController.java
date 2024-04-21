@@ -1,18 +1,12 @@
 package com.inventory.controllers;
 
-import com.inventory.classes.Inventory;
 import com.inventory.classes.Item;
 import com.inventory.frontends.InventoryApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import com.inventory.frontends.EditInventory;
-
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import static com.inventory.frontends.InventoryApplication.inventoryScrollPane;
 
 public class EditInventoryController {

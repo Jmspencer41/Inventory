@@ -17,7 +17,7 @@ public class InventoryApplication extends Application {
     public static Inventory inventory;
     public static ScrollPane inventoryScrollPane;
     public static BufferedReader in;
-    public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
+    public static String inventoryFilePath = "target/classes/files/inventory.txt";
     public static Stage primaryStage;
     private static Scene mainScene;
 
@@ -26,10 +26,13 @@ public class InventoryApplication extends Application {
         InventoryApplication.primaryStage = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
         Parent root = fxmlLoader.load();
-        mainScene = new Scene(root, 1200, 800);
 
+        mainScene = new Scene(root, 1000, 600);
         inventoryScrollPane = (ScrollPane) mainScene.lookup("#inventoryScrollPane");
-
+        /**
+         * Read the inventory file and add items to the inventory
+         * @throws IOException If the file is not found
+         */
         try {
             in = new BufferedReader(new FileReader(inventoryFilePath));
         } catch (IOException e) {
@@ -37,12 +40,18 @@ public class InventoryApplication extends Application {
                 new FileWriter(inventoryFilePath).close();
             } catch (IOException ioException) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Could not create inventory file. " + ioException.getMessage());
+                alert.show();
                 ioException.printStackTrace();
             }
         }
 
-
         inventory = new Inventory();
+
+        /**
+         * Show the inventory in the scroll pane
+         * @throws Exception If the scroll pane is not found
+         */
         try {
             inventory.showInventory(inventoryScrollPane);
         } catch (Exception e) {
@@ -53,7 +62,6 @@ public class InventoryApplication extends Application {
         }
 
         InventoryApplication.primaryStage.setTitle("My Inventory");
-//        setScene(this.primaryStage, scene);
         primaryStage.setTitle("My Inventory");
         primaryStage.setScene(mainScene);
         primaryStage.show();

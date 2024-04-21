@@ -1,7 +1,6 @@
 package com.inventory.controllers;
 
 import com.inventory.classes.Inventory;
-import com.inventory.classes.Item;
 import com.inventory.frontends.AddInventory;
 import com.inventory.frontends.InventoryApplication;
 import javafx.event.ActionEvent;
@@ -9,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import org.controlsfx.control.action.Action;
 import java.io.IOException;
 import static com.inventory.frontends.InventoryApplication.inventory;
 
@@ -33,7 +31,6 @@ public class InventoryMainController {
 
         try {
             Inventory searchInventory = new Inventory(searchItem);
-
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(e.getMessage());

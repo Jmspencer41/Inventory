@@ -1,6 +1,5 @@
 package com.inventory.frontends;
 
-import com.inventory.classes.Item;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

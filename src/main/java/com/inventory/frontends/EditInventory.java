@@ -3,7 +3,6 @@ package com.inventory.frontends;
 import com.inventory.classes.Item;
 import com.inventory.controllers.EditInventoryController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 

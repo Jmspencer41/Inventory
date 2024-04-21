@@ -19,7 +19,6 @@ import com.inventory.frontends.InventoryApplication;
 public class Inventory {
     public static ArrayList<Item> inventory;
     public ArrayList<Item> searchResults;
-    //Don't think I need this counter?
     public static int inventoryItemCount;
 
     public Inventory() throws IOException {
@@ -27,8 +26,7 @@ public class Inventory {
         String line = "";
         inventoryItemCount = 0;
 
-        // Read the inventory file and add items to the inventory
-        while (line != null) {
+        while (line != null) { // Read the inventory file and add items to the inventory
             line = InventoryApplication.in.readLine();
             if (line != null) {
                 String[] item = line.split(",");
