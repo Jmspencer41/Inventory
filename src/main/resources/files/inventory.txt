@@ -6,3 +6,4 @@ Whatever,Whaterver i want to it & more!!!!,42.69,12
 Eye Patch,Shelf flash light green,368.22,1
 Abigail,Heavenly Gift from the heavens up above,1.0E12,1
 New item,Just another new item to be put into the system,42.54,15
+Things,new things to put in here,1.08,1075

@@ -46,7 +46,7 @@ public class Inventory {
         searchResults = new ArrayList<>();
         FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("home-view.fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 1200, 800);
+        Scene scene = new Scene(root, 1000, 600);
         ScrollPane searchScrollPane = (ScrollPane) scene.lookup("#inventoryScrollPane");
 
         for (Item item : inventory) {
