@@ -2,6 +2,7 @@ package com.inventory.classes;
 
 import static com.inventory.classes.Inventory.inventory;
 
+
 public class Item {
     private String name;
     private String description;
