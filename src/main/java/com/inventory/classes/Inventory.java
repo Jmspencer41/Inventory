@@ -24,7 +24,7 @@ public class Inventory {
         inventory = new ArrayList<>();
         String line = "";
         inventoryItemCount = 0;
-       
+
 
         while (line != null) { // Reads the inventory file and add items to the inventory
             line = InventoryApplication.in.readLine();
