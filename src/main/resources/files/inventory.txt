@@ -4,6 +4,8 @@ Hello World,Just some words to go in this place for no reason,457.54,42
 Something new,A description of something,48.54,12
 Whatever,Whaterver i want to it & more!!!!,42.69,12
 Eye Patch,Shelf flash light green,368.22,1
-Abigail,Heavenly Gift from the heavens up above,1.0E12,1
 New item,Just another new item to be put into the system,42.54,15
 Things,new things to put in here,1.08,1075
+Nothing,Nothing goes here,0.0,100
+Abigail,Girlfriend named Abigail,100000.0,1
+Fiona,Best puppy in the world,100000.0,1

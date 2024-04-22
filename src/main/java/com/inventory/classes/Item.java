@@ -36,9 +36,7 @@ public class Item {
     public double getTotalPrice() {
         return totalPrice;
     }
-    public int getIndex() {
-       return inventory.indexOf(this);
-    }
+    public int getIndex() {return inventory.indexOf(this);}
 
     /**
      * Setters for the item object
