@@ -25,7 +25,6 @@ public class Inventory {
         String line = "";
         inventoryItemCount = 0;
 
-
         while (line != null) { // Reads the inventory file and add items to the inventory
             line = InventoryApplication.in.readLine();
             if (line != null) {
@@ -37,9 +36,9 @@ public class Inventory {
         }
     }
 
-
     /**
      * Constructor for searching for an item in the inventory
+     * 
      * @param searchedItem The item to search for
      * @throws IOException If the item is not found
      */
@@ -73,10 +72,20 @@ public class Inventory {
 
     }
 
+    /**
+     * Getter method for size
+     * 
+     * @return inventory size
+     */
     public int size() {
         return inventory.size();
     }
 
+    /**
+     * @param item
+     * @param scrollPane
+     * @throws IOException
+     */
     public void addItem(Item item, ScrollPane scrollPane) throws IOException {
         inventory.add(item);
         showInventory(scrollPane);
@@ -123,7 +132,8 @@ public class Inventory {
             BufferedWriter out = new BufferedWriter(new FileWriter(InventoryApplication.inventoryFilePath, false));
 
             for (Item item : inventory) {
-                out.write(item.getName() + "," + item.getDescription() + "," + item.getPrice() + "," + item.getQuantity() + "\n");
+                out.write(item.getName() + "," + item.getDescription() + "," + item.getPrice() + ","
+                        + item.getQuantity() + "\n");
             }
             out.close();
             Alert success = new Alert(Alert.AlertType.INFORMATION);
