@@ -21,6 +21,7 @@ public class EditInventory {
         EditInventoryController editController = fxmlLoader.getController();
 
         editController.setFields(item);
+
         index = item.getIndex();
         EditStage = new Stage();
         EditStage.setTitle("Edit Inventory");

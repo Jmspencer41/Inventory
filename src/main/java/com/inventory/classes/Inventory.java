@@ -25,7 +25,7 @@ public class Inventory {
         String line = "";
         inventoryItemCount = 0;
 
-        while (line != null) { // Read the inventory file and add items to the inventory
+        while (line != null) { // Reads the inventory file and add items to the inventory
             line = InventoryApplication.in.readLine();
             if (line != null) {
                 String[] item = line.split(",");
