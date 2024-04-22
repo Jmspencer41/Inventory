@@ -73,7 +73,7 @@ public class Inventory {
     }
 
     /**
-     * Getter method for size
+     * Getter method for inventory size
      * 
      * @return inventory size
      */
