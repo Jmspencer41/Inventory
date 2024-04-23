@@ -18,8 +18,12 @@ import com.inventory.frontends.InventoryApplication;
 public class Inventory {
     public static ArrayList<Item> inventory;
     public ArrayList<Item> searchResults;
-    public static int inventoryItemCount;
+    public static int inventoryItemCount;//Probably dont need this.
 
+    /**
+     * Default Constructor
+     * @throws IOException
+     */
     public Inventory() throws IOException {
         inventory = new ArrayList<>();
         String line = "";
@@ -77,9 +81,9 @@ public class Inventory {
      * 
      * @return inventory size
      */
-    public int size() {
-        return inventory.size();
-    }
+//    public int size() { //Probably dont need this.
+//        return inventory.size();
+//    }
 
     /**
      * @param item
