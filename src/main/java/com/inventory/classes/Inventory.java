@@ -82,8 +82,10 @@ public class Inventory {
     }
 
     /**
-     * @param item
-     * @param scrollPane
+     * Method to add a new item
+     * 
+     * @param item       The Item a User would like to add
+     * @param scrollPane JavaFx input
      * @throws IOException
      */
     public void addItem(Item item, ScrollPane scrollPane) throws IOException {
@@ -91,11 +93,24 @@ public class Inventory {
         showInventory(scrollPane);
     }
 
+    /**
+     * Method to Remove any Added Items
+     * 
+     * @param index      The Index of the selected Item
+     * @param scrollPane JavaFx input
+     * @throws IOException
+     */
     public void removeItem(int index, ScrollPane scrollPane) throws IOException {
         inventory.remove(index);
         showInventory(scrollPane);
     }
 
+    /**
+     * Method to update the Table shown in the GUI
+     * 
+     * @param scrollPane JavaFx input
+     * @throws IOException
+     */
     public void updateInventoryTable(ScrollPane scrollPane) throws IOException {
         showInventory(scrollPane);
     }
