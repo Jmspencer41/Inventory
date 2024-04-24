@@ -6,7 +6,7 @@ Java Development Kit (JDK) 21
 JavaFX library  
 ## Build Instructions ##
 1. Clone the repository to your local machine:  
-**git clone https://github.com/your-username/inventory-management.git**
+**git clone https://github.com/your-username/inventory.git**
 2. Navigate to the project directory:  
 **cd inventory-management**
 3. Compile the Java files:  
