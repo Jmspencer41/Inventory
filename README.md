@@ -8,7 +8,7 @@ JavaFX library
 1. Clone the repository to your local machine:  
 **git clone https://github.com/jmspencer41/inventory.git**
 2. Navigate to the project directory:  
-**cd inventory-management**
+**cd inventory**
 3. Compile the Java files:  
 **javac com/inventory/frontends/\*.java com/inventory/classes/\*.java com/inventory/controllers/*.java**
 ## Run Instructions ##
