@@ -49,7 +49,7 @@ public class InventoryApplication extends Application {
 
         inventory = new Inventory();
 
-        /**
+         /**
          * Show the inventory in the scroll pane
          * @throws Exception If the scroll pane is not found
          */
