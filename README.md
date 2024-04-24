@@ -2,8 +2,8 @@
 This application allows users to manage inventory items, including adding, editing, searching, and deleting items.
 
 ## Prerequisites ##
-Java Development Kit (JDK) 8 or higher
-JavaFX library
+Java Development Kit (JDK) 21    
+JavaFX library  
 ## Build Instructions ##
 1. Clone the repository to your local machine:  
 **git clone https://github.com/your-username/inventory-management.git**
