@@ -2,7 +2,7 @@ Josh,Human,420.69,54
 Computer,Personal programming and gaming machine,5000.0,3
 Hello World!,Just some words to go in this place for no reason,457.54,42
 Something new,A description of something,48.54,12
-Whatever,Whaterver i want to it & more!!!!,42.69,12
+Whatever,Whaterver i want to it,42.69,12
 Eye Patch,Shelf flash light green,368.22,1
 New item,Just another new item to be put into the system,42.54,15
 Things,new things to put in here,1.08,1075
@@ -11,3 +11,4 @@ Abigail,Girlfriend named Abigail,100000.0,1
 Fiona,Best puppy in the world,100000.0,1
 JFdsjkdfs,wnlf sfnoif ksdjfnsjd fwjf,4.2,69
 Stuff,Stuff to go in the inventory,54.74,15
+Madhav,Profesor,42.0,1
