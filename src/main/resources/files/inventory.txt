@@ -1,4 +1,4 @@
-Josh,Human,420.69,54
+Josh,Human,57.41,54
 Computer,Personal programming and gaming machine,5000.0,3
 Hello World!,Just some words to go in this place for no reason,457.54,42
 Something new,A description of something,48.54,12
