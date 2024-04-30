@@ -4,6 +4,7 @@ import com.inventory.classes.Item;
 import com.inventory.frontends.AddInventory;
 import com.inventory.frontends.InventoryApplication;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import java.io.IOException;
@@ -15,6 +16,8 @@ public class AddInventoryController {
     @FXML
     private TextField descriptionTextField;
     @FXML
+    public ChoiceBox locationDropdown;
+    @FXML
     private TextField priceTextField;
     @FXML
     private TextField quantityTextField;
@@ -25,6 +28,8 @@ public class AddInventoryController {
 
         String itemName = itemNameTextField.getText();
         String itemDescription = descriptionTextField.getText();
+        //Find the method to get the String from the dropdown
+        //String itemLocation = locationDropdown.???
         double itemPrice;
         int itemQuantity;
 

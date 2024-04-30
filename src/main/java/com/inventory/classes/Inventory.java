@@ -21,7 +21,7 @@ public class Inventory {
     public static int inventoryItemCount;//Probably dont need this.
 
     /**
-     * Default Constructor
+     * Default Inventory Constructor
      * @throws IOException
      */
     public Inventory() throws IOException {
@@ -42,7 +42,6 @@ public class Inventory {
 
     /**
      * Constructor for searching for an item in the inventory
-     * 
      * @param searchedItem The item to search for
      * @throws IOException If the item is not found
      */
@@ -78,7 +77,6 @@ public class Inventory {
 
     /**
      * Getter method for inventory size
-     * 
      * @return inventory size
      */
 //    public int size() { //Probably dont need this.
@@ -87,7 +85,6 @@ public class Inventory {
 
     /**
      * Method to add a new item
-     * 
      * @param item       The Item a User would like to add
      * @param scrollPane JavaFx input
      * @throws IOException
@@ -99,7 +96,6 @@ public class Inventory {
 
     /**
      * Method to Remove any Added Items
-     * 
      * @param index      The Index of the selected Item
      * @param scrollPane JavaFx input
      * @throws IOException
@@ -111,7 +107,6 @@ public class Inventory {
 
     /**
      * Method to update the Table shown in the GUI
-     * 
      * @param scrollPane JavaFx input
      * @throws IOException
      */
@@ -145,6 +140,9 @@ public class Inventory {
         inventoryScrollPane.setContent(vBox);
     }
 
+    /**
+     * Logic to save the inventory to the CSV file
+     */
     public void saveInventory() {
         try {
 
@@ -160,6 +158,11 @@ public class Inventory {
             success.setHeaderText("Save Successful");
             success.show();
         } catch (IOException e) {
+            Alert success = new Alert(Alert.AlertType.ERROR);
+            success.setTitle("Save");
+            success.setHeaderText("Save Unsuccessful");
+            success.setContentText(e.getMessage());
+            success.show();
             e.printStackTrace();
         }
     }

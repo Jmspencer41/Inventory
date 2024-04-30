@@ -37,6 +37,7 @@ public class InventoryMainController {
             alert.show();
         }
     }
+
     @FXML
     public void onSaveClick(ActionEvent actionEvent) {
         inventory.saveInventory();

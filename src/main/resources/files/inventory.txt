@@ -11,4 +11,4 @@ Abigail,Girlfriend named Abigail,100000.0,1
 Fiona,Best puppy in the world,100000.0,1
 JFdsjkdfs,wnlf sfnoif ksdjfnsjd fwjf,4.2,69
 Stuff,Stuff to go in the inventory,54.74,15
-Madhav,Professor,42.0,1
+Arduino,Fun size cpu,20.24,4
