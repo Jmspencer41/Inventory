@@ -15,6 +15,8 @@ public class ItemHBoxController {
     @FXML
     private Label descriptionLabel;
     @FXML
+    private Label locationLabel;
+    @FXML
     private Label priceLabel;
     @FXML
     private Label quantityLabel;
