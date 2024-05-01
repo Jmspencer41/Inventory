@@ -9,6 +9,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
+/**
+ * Controller class for adding inventory items.
+ */
 public class AddInventoryController {
 
     @FXML
@@ -22,14 +25,19 @@ public class AddInventoryController {
     @FXML
     private TextField quantityTextField;
 
-
+    /**
+     * Handles the click event of the "Add Inventory" button.
+     * Adds a new item to the inventory.
+     * 
+     * @throws IOException if an I/O error occurs
+     */
     @FXML
     protected void onAddInventoryClick() throws IOException {
 
         String itemName = itemNameTextField.getText();
         String itemDescription = descriptionTextField.getText();
-        //Find the method to get the String from the dropdown
-        //String itemLocation = locationDropdown.???
+        // Find the method to get the String from the dropdown
+        // String itemLocation = locationDropdown.???
         double itemPrice;
         int itemQuantity;
 
@@ -40,8 +48,7 @@ public class AddInventoryController {
             try {
                 itemPrice = Double.parseDouble(priceTextField.getText());
                 itemQuantity = Integer.parseInt(quantityTextField.getText());
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 throw new IOException("Price and Quantity must be numbers");
             }
         }
