@@ -14,6 +14,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Represents the main application class for the inventory management system.
+ */
 public class InventoryApplication extends Application {
     public static Inventory inventory;
     public static ScrollPane inventoryScrollPane;
@@ -22,6 +25,12 @@ public class InventoryApplication extends Application {
     public static Stage primaryStage;
     private static Scene mainScene;
 
+    /**
+     * Starts the application.
+     * 
+     * @param primaryStage The primary stage
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
         InventoryApplication.primaryStage = primaryStage;
@@ -32,6 +41,7 @@ public class InventoryApplication extends Application {
         inventoryScrollPane = (ScrollPane) mainScene.lookup("#inventoryScrollPane");
         /**
          * Read the inventory file and add items to the inventory
+         * 
          * @throws IOException If the file is not found
          */
         try {
@@ -49,8 +59,9 @@ public class InventoryApplication extends Application {
 
         inventory = new Inventory();
 
-         /**
+        /**
          * Show the inventory in the scroll pane
+         * 
          * @throws Exception If the scroll pane is not found
          */
         try {
@@ -68,11 +79,19 @@ public class InventoryApplication extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Sets the main scene.
+     */
     public static void setMainScene() {
         primaryStage.setScene(mainScene);
         primaryStage.show();
     }
 
+    /**
+     * Sets the settings scene.
+     * 
+     * @throws IOException if an I/O error occurs
+     */
     public static void setSettingsScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(InventoryApplication.class.getResource("settings-view.fxml"));
         Parent root = fxmlLoader.load();
@@ -81,9 +100,19 @@ public class InventoryApplication extends Application {
         primaryStage.show();
     }
 
-    public static void setDarkMode() { //TODO: Implement dark mode
-        mainScene.getStylesheets().add(Objects.requireNonNull(InventoryApplication.class.getResource("dark-mode.css")).toExternalForm());
+    /**
+     * Sets the dark mode (to be implemented).
+     */
+    public static void setDarkMode() { // TODO: Implement dark mode
+        mainScene.getStylesheets()
+                .add(Objects.requireNonNull(InventoryApplication.class.getResource("dark-mode.css")).toExternalForm());
     }
+
+    /**
+     * The main method.
+     * 
+     * @param args The command-line arguments
+     */
     public static void main(String[] args) {
         launch();
     }
