@@ -30,7 +30,6 @@ public class ItemHBoxController {
 
     /**
      * Sets the data of the item in the HBox.
-     * 
      * @param item The item to display
      */
     public void setItemData(Item item) {
@@ -45,7 +44,6 @@ public class ItemHBoxController {
     /**
      * Handles the click event of the "Edit" button.
      * Opens the Edit Inventory window.
-     * 
      * @param actionEvent The ActionEvent
      * @throws IOException if an I/O error occurs
      */

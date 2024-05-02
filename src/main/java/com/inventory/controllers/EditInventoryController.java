@@ -27,7 +27,6 @@ public class EditInventoryController {
 
     /**
      * Sets the fields with the data of the selected item.
-     * 
      * @param item The item to edit
      */
     @FXML
@@ -42,7 +41,6 @@ public class EditInventoryController {
     /**
      * Handles the click event of the "Save" button.
      * Saves the changes made to the item.
-     * 
      * @param actionEvent The ActionEvent
      * @throws IOException if an I/O error occurs
      */
@@ -77,7 +75,6 @@ public class EditInventoryController {
     /**
      * Handles the click event of the "Delete" button.
      * Deletes the item from the inventory.
-     * 
      * @param actionEvent The ActionEvent
      * @throws IOException if an I/O error occurs
      */

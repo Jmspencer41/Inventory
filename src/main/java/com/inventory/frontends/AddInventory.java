@@ -15,7 +15,6 @@ public class AddInventory {
     /**
      * Constructor for the AddInventory class.
      * Creates and displays the Add Inventory window.
-     * 
      * @throws IOException if an I/O error occurs
      */
     public AddInventory() throws IOException {

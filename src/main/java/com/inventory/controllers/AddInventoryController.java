@@ -28,7 +28,6 @@ public class AddInventoryController {
     /**
      * Handles the click event of the "Add Inventory" button.
      * Adds a new item to the inventory.
-     * 
      * @throws IOException if an I/O error occurs
      */
     @FXML

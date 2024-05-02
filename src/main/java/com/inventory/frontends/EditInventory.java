@@ -19,7 +19,6 @@ public class EditInventory {
     /**
      * Constructor for the EditInventory class.
      * Creates and displays the Edit Inventory window.
-     * 
      * @param item The item to edit
      * @throws IOException if an I/O error occurs
      */
@@ -41,7 +40,6 @@ public class EditInventory {
 
     /**
      * Returns the index of the edited item.
-     * 
      * @return The index of the edited item
      */
     public static int getIndex() {
