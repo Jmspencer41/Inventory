@@ -27,7 +27,6 @@ public class InventoryApplication extends Application {
 
     /**
      * Starts the application.
-     * 
      * @param primaryStage The primary stage
      * @throws IOException if an I/O error occurs
      */
@@ -39,9 +38,9 @@ public class InventoryApplication extends Application {
 
         mainScene = new Scene(root, 1000, 600);
         inventoryScrollPane = (ScrollPane) mainScene.lookup("#inventoryScrollPane");
+
         /**
          * Read the inventory file and add items to the inventory
-         * 
          * @throws IOException If the file is not found
          */
         try {
@@ -61,7 +60,6 @@ public class InventoryApplication extends Application {
 
         /**
          * Show the inventory in the scroll pane
-         * 
          * @throws Exception If the scroll pane is not found
          */
         try {
@@ -89,7 +87,6 @@ public class InventoryApplication extends Application {
 
     /**
      * Sets the settings scene.
-     * 
      * @throws IOException if an I/O error occurs
      */
     public static void setSettingsScene() throws IOException {
@@ -110,7 +107,6 @@ public class InventoryApplication extends Application {
 
     /**
      * The main method.
-     * 
      * @param args The command-line arguments
      */
     public static void main(String[] args) {

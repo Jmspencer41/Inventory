@@ -23,7 +23,6 @@ public class InventoryMainController {
     /**
      * Handles the click event of the "Add Inventory" button.
      * Opens the Add Inventory window.
-     * 
      * @throws IOException if an I/O error occurs
      */
     @FXML
@@ -34,7 +33,6 @@ public class InventoryMainController {
     /**
      * Handles the click event of the "Settings" button.
      * Opens the settings scene.
-     * 
      * @throws IOException if an I/O error occurs
      */
     @FXML
