@@ -11,4 +11,12 @@ public class InventoryLocations implements Location{
     public String getName() {
         return name;
     }
+
+    public void addLocation() {
+
+    }
+
+    public void removeLocation() {
+
+    }
 }
