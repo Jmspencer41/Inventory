@@ -1,19 +1,20 @@
 package com.inventory.classes;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import javafx.scene.control.Alert;
+
+import java.io.*;
 import java.util.ArrayList;
 
 public class InventoryLocations implements Location{
     private ArrayList<String> locations;
+    private final String LOCATION_FILE_PATH = "src/main/resources/files/locations.txt";
     private String name;
 
     public InventoryLocations() throws IOException {
         locations = new ArrayList<>();
         String line = "";
 
-        BufferedReader in = new BufferedReader(new FileReader("src/main/resources/files/locations.txt"));
+        BufferedReader in = new BufferedReader(new FileReader(LOCATION_FILE_PATH));
         while (line != null) {
             line = in.readLine();
             locations.add(line);
@@ -22,16 +23,29 @@ public class InventoryLocations implements Location{
     }
 
     @Override
-    public String getName() {
+    public String getLocation() {
         return name;
     }
 
-    //TODO: Figure out how im going to do this
-    public void addLocation() {
-
+    public void addLocation(String location) {
+        locations.add(location);
     }
 
-    public void removeLocation() {
+    public void removeLocation(String location) {
+        locations.remove(location.indexOf(location));
+    }
 
+    public void saveLocation() {
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter(LOCATION_FILE_PATH));
+
+        } catch (IOException e) {
+            Alert success = new Alert(Alert.AlertType.ERROR);
+            success.setTitle("Save");
+            success.setHeaderText("Save Unsuccessful");
+            success.setContentText(e.getMessage() + " Location data was not able to save.");
+            success.show();
+            e.printStackTrace();
+        }
     }
 }

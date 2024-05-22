@@ -79,7 +79,7 @@ public class Inventory {
      * Getter method for inventory size
      * @return inventory size
      */
-//    public int size() { //Probably dont need this.
+//    public int size() { //Probably don't need this.
 //        return inventory.size();
 //    }
 
