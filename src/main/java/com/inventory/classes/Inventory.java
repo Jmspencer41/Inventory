@@ -27,7 +27,7 @@ public class Inventory {
     public Inventory() throws IOException {
         inventory = new ArrayList<>();
         String line = "";
-        inventoryItemCount = 0;
+        inventoryItemCount = 0; //Don't need I think.
 
         while (line != null) { // Reads the inventory file and add items to the inventory
             line = InventoryApplication.in.readLine();
