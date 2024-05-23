@@ -101,8 +101,7 @@ public class InventoryApplication extends Application {
      * Sets the dark mode (to be implemented).
      */
     public static void setDarkMode() { // TODO: Implement dark mode
-        mainScene.getStylesheets()
-                .add(Objects.requireNonNull(InventoryApplication.class.getResource("dark-mode.css")).toExternalForm());
+        mainScene.getStylesheets().add(Objects.requireNonNull(InventoryApplication.class.getResource("dark-mode.css")).toExternalForm());
     }
 
     /**

@@ -5,7 +5,7 @@ import javafx.scene.control.Alert;
 import java.io.*;
 import java.util.ArrayList;
 
-public class InventoryLocations implements Location{
+public class InventoryLocations{
     private ArrayList<String> locations;
     private final String LOCATION_FILE_PATH = "src/main/resources/files/locations.txt";
     private String name;
@@ -22,8 +22,7 @@ public class InventoryLocations implements Location{
         in.close();
     }
 
-    @Override
-    public String getLocation() {
+    public String getLocation(String location) {
         return name;
     }
 
