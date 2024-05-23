@@ -38,12 +38,17 @@ public class InventoryLocations{
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(LOCATION_FILE_PATH));
 
+            for (String location : locations) {
+                out.write(location);
+            }
+            out.close();
+
         } catch (IOException e) {
-            Alert success = new Alert(Alert.AlertType.ERROR);
-            success.setTitle("Save");
-            success.setHeaderText("Save Unsuccessful");
-            success.setContentText(e.getMessage() + " Location data was not able to save.");
-            success.show();
+            Alert failed = new Alert(Alert.AlertType.ERROR);
+            failed.setTitle("Save");
+            failed.setHeaderText("Save Unsuccessful");
+            failed.setContentText(e.getMessage() + " Location data was unable to save.");
+            failed.show();
             e.printStackTrace();
         }
     }

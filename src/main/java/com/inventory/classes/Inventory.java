@@ -158,11 +158,11 @@ public class Inventory {
             success.setHeaderText("Save Successful");
             success.show();
         } catch (IOException e) {
-            Alert success = new Alert(Alert.AlertType.ERROR);
-            success.setTitle("Save");
-            success.setHeaderText("Save Unsuccessful");
-            success.setContentText(e.getMessage());
-            success.show();
+            Alert failed = new Alert(Alert.AlertType.ERROR);
+            failed.setTitle("Save");
+            failed.setHeaderText("Save Unsuccessful");
+            failed.setContentText(e.getMessage() + " Inventory data was unable to save.");
+            failed.show();
             e.printStackTrace();
         }
     }
