@@ -57,6 +57,7 @@ public class InventoryApplication extends Application {
         }
 
         inventory = new Inventory();
+        locations = new InventoryLocations();
 
         /**
          * Show the inventory in the scroll pane

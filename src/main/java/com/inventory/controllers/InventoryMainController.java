@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import java.io.IOException;
+import com.inventory.classes.InventoryLocations;
 import static com.inventory.frontends.InventoryApplication.inventory;
 
 /**
@@ -18,6 +19,8 @@ public class InventoryMainController {
 
     @FXML
     public TextField searchText;
+    @FXML
+    public TextField addLocationText;
     public ScrollPane inventoryScrollPane;
 
     /**
@@ -82,5 +85,12 @@ public class InventoryMainController {
     @FXML
     public void darkMode(ActionEvent actionEvent) {
         InventoryApplication.setDarkMode();
+    } //TODO: Implement dark mode
+
+    @FXML
+    public void onAddLocationClick(ActionEvent actionEvent) {
+        String location = addLocationText.getText();
+        InventoryLocations.addLocation(location);
     }
+
 }

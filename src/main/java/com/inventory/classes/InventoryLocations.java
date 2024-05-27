@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class InventoryLocations{
-    private ArrayList<String> locations;
+    private static ArrayList<String> locations;
     private final String LOCATION_FILE_PATH = "src/main/resources/files/locations.txt";
     private String name;
 
@@ -26,7 +26,7 @@ public class InventoryLocations{
         return name;
     }
 
-    public void addLocation(String location) {
+    public static void addLocation(String location) {
         locations.add(location);
     }
 
