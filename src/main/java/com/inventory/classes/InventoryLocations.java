@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class InventoryLocations{
     private static ArrayList<String> locations;
-    private final String LOCATION_FILE_PATH = "src/main/resources/files/locations.txt";
+    private static final String LOCATION_FILE_PATH = "src/main/resources/files/locations.txt";
     private String name;
 
     public InventoryLocations() throws IOException {
@@ -28,17 +28,21 @@ public class InventoryLocations{
 
     public static void addLocation(String location) {
         locations.add(location);
+        for (String loc : locations) {
+            System.out.println(loc);
+        }
     }
 
     public void removeLocation(String location) {
         locations.remove(location.indexOf(location));
     }
 
-    public void saveLocation() {
+    public static void saveLocation() {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(LOCATION_FILE_PATH));
 
             for (String location : locations) {
+                System.out.println(location);
                 out.write(location);
             }
             out.close();

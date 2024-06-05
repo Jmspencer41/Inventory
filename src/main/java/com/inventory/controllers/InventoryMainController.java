@@ -66,6 +66,7 @@ public class InventoryMainController {
      */
     @FXML
     public void onSaveClick(ActionEvent actionEvent) {
+        InventoryLocations.saveLocation();
         inventory.saveInventory();
     }
 

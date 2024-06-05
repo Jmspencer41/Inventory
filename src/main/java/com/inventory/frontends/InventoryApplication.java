@@ -1,6 +1,7 @@
 package com.inventory.frontends;
 
 import com.inventory.classes.Inventory;
+import com.inventory.classes.InventoryLocations;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,7 @@ import java.util.Objects;
  */
 public class InventoryApplication extends Application {
     public static Inventory inventory;
+    public static InventoryLocations locations;
     public static ScrollPane inventoryScrollPane;
     public static BufferedReader in;
     public static String inventoryFilePath = "src/main/resources/files/inventory.txt";
