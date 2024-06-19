@@ -142,6 +142,7 @@ public class Inventory {
 
     /**
      * Logic to save the inventory to the CSV file
+     * @throws IOException
      */
     public void saveInventory() {
         try {
